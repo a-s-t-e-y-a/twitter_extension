@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Twitter Grammar Fixer",
+  "name": "LingoFix-Fix your tweet",
   "version": "1.0",
   "description": "Uses Gemini AI to fix tweet grammar",
   "permissions": [
@@ -20,5 +20,8 @@
       "js": ["content.js"],
       "css": ["style.css"]
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
 }

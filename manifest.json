@@ -1,12 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "Twitter Title Logger",
+  "name": "Twitter Grammar Fixer",
   "version": "1.0",
-  "description": "Logs the title of Twitter tabs",
-  "permissions": ["activeTab", "scripting"],
+  "description": "Uses Gemini AI to fix tweet grammar",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
   "host_permissions": [
-    "https://twitter.com/*",
-    "https://x.com/*"
+    "https://generativelanguage.googleapis.com/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -14,10 +17,8 @@
   "content_scripts": [
     {
       "matches": ["https://twitter.com/*", "https://x.com/*"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "css": ["style.css"]
     }
-  ],
-  "action": {
-    "default_title": "Twitter Title Logger"
-  }
+  ]
 }
